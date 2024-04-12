@@ -1,5 +1,4 @@
-import pandas as pd
-import numpy as np
+from .helping import *
 
 def insurer_policy_limit(X,u):
     """

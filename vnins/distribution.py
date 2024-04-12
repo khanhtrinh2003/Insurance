@@ -1,4 +1,4 @@
-import numpy as np
+from .helping import *
 
 def random_uniform(low=0, high=1, size=None):
     """
