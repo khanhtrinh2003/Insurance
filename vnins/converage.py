@@ -46,7 +46,7 @@ def expected_payment_per_payment(X,d):
     return np.mean(payment_per_payment(X,d))
 
 def insurer_franchise_deductibles(X,d):
-    return 0 if X<=d else X
+    return np.where(X<=d,0,X)
     
 def insurer_coinsurance(X,alpha):
     return X*alpha

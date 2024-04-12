@@ -14,6 +14,20 @@ def random_uniform(low=0, high=1, size=None):
     """
     return np.random.uniform(low, high, size)
 
+def random_uniform_discrete(low=0, high=10, size=None):
+    """
+    Generate random numbers from a uniform distribution.
+
+    Parameters:
+    - low: Lower bound of the distribution (default: 0).
+    - high: Upper bound of the distribution (default: 1).
+    - size: Output shape (default is None, which returns a single value).
+
+    Returns:
+    - Random numbers from the uniform distribution.
+    """
+    return np.random.randint(low, high, size)
+
 def random_normal(mean=0, std=1, size=None):
     """
     Generate random numbers from a normal (Gaussian) distribution.
@@ -201,4 +215,22 @@ def random_from_pdf(pdf, xmin, xmax, size=None):
         valid = pdf(x) > 0
 
     return x
+
+import random
+
+def random_discrete(numbers, probabilities, num_random_numbers):
+    """
+    Generate random numbers based on given probabilities.
+
+    Args:
+    - numbers (list): List of numbers to choose from.
+    - probabilities (list): Probabilities corresponding to each number.
+    - num_random_numbers (int): Number of random numbers to generate.
+
+    Returns:
+    - random_numbers (list): List of generated random numbers.
+    """
+    random_numbers = random.choices(numbers, weights=probabilities, k=num_random_numbers)
+    return random_numbers
+
 
